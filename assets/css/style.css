@@ -16,12 +16,6 @@
     clear: both;
 }
 
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
-}
-
 /* header styles + BGN */
 header h1 {
     font-weight: bold;
@@ -139,7 +133,7 @@ section {
   }
 
   .steps div {
-      margin-bottom: 80px;
+    margin-bottom: 80px;
   }
 
   .steps img {
@@ -159,7 +153,7 @@ section {
   }
 
   .steps span{
-      font-size: 38px;
+    font-size: 38px;
   }
 /* Steps general + END */
 
