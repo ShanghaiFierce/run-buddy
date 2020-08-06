@@ -44,7 +44,7 @@ header nav ul li a {
     font-size: 1.55vw;
 }
 
-/* body styles + BGN */
+/* main section begins */
 body {
     color: #39a6b2;
     font-family: Arial, Helvetica, sans-serif; 
@@ -54,7 +54,7 @@ section {
     padding: 60px;
 }
 
-/* hero general container */
+/* .hero general container */
 .hero {
     background-image: url("../images/hero-bg.jpg");
     background-size: cover;
@@ -65,7 +65,7 @@ section {
     align-items: flex-start;
 }
 
-/* hero CTA CSS */
+/* .hero CTA CSS */
 .hero-cta {
     width: 35%;
     text-align: right;
@@ -81,7 +81,7 @@ section {
     font-size: 58px;
     font-style: italic;
 }
-/* hero form CSS */
+/* .hero form CSS */
 .hero-form {
     color: #024e76;
     background-color: #fce138;
@@ -122,7 +122,7 @@ section {
     padding: 10px 20px;
 }
 
-/* Steps general + BGN */
+/* Steps general section */
 .section-title {
     font-size: 48px;
     border-bottom: 3px solid;
@@ -141,7 +141,7 @@ section {
     border-color: #39a6b2;
 }
 
-/* what we do + BGN */
+/* .what we do */
 .intro p {
     line-height: 1.7;
     color: #39a6b2;
@@ -151,7 +151,7 @@ section {
     text-align: center;
 }
 
-/* what you do */
+/* .what you do */
 /* flex style rules for Steps General */
 .steps {
     margin: 50px auto;
@@ -205,7 +205,7 @@ section {
     max-width: 100%;
 }
 
-/* trainers + BGN */
+/* trainers section */
 .trainers {
     width: 100%;
     margin: 0 auto;
@@ -244,7 +244,37 @@ section {
     font-size: 17px;
 }
 
-/* reach out + BGN */
+/* service plans section */
+.service-grid-container {
+    display: grid;
+    max-width: 940px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 10px;
+  }
+
+.service-grid-item {
+    background-color: orange;
+    border: solid;
+    padding: 1em;
+    color: black;
+  }
+
+.box1 {
+    grid-column-start: 1; 
+    grid-column-end: 2; 
+    grid-row-start: 1; 
+    grid-row-end: 3; 
+  }
+
+.box2 {
+    grid-column: 1/ span 1; 
+    grid-row: 1/ span 2; 
+  }
+
+/* reach out section */
 .contact-info {
     background-color: #024e76;
 }
