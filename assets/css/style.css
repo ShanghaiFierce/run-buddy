@@ -254,16 +254,10 @@ section {
     margin: 0 auto;
 }
 
-#map {
+.contact-form {
     float: left;
-    width: 50%;
+    width: 30%;
     margin: 0 auto;
-}
-
-#contact {
-    float: right;
-    width: 50%;
-    vertical-align: top;
 }
 /* reach out + END */
 
