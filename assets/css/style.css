@@ -1,4 +1,9 @@
-
+:root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+  }
+  
 * {
     margin: 0;
     padding: 0;
@@ -51,6 +56,13 @@ header nav ul li a {
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+}
+
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
 }
 
 /* main section begins */
@@ -123,6 +135,11 @@ section {
     border: 3px solid #024e76;
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(2, 78, 118, 0.5);
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.form-input:focus {
+    background-color: rgba(255, 255, 255, 1)
 }
 
 .hero-form label {
@@ -137,6 +154,10 @@ section {
     border: 2px solid #024e76;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(2, 78, 118, 0.5);
+}
+
+.hero-form button:hover {
+    background-color: #39a6b2;
 }
 
 /* Steps general section */
@@ -182,7 +203,12 @@ section {
     background: #fce138;
     }
 
-.steps h3 {
+.step {
+    width: 100%;
+    display: flex;
+}
+
+.step h3 {
     color: #024e76;
     font-size: 46px;
     margin-top: 10px;
@@ -385,6 +411,11 @@ section {
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(2, 78, 118, 0.5);
 }
+
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
+}
 /* footer + BGN */
 footer {
     background: #fce138;
@@ -466,11 +497,13 @@ footer a {
 
     .step h3 {
         flex: 1 100%;
+        width: 100%;
         text-align: center;
     }
 
     .step-info {
         flex: 2 100%;
+        width: 100%;
         text-align: center;
         justify-content: center;
     }
