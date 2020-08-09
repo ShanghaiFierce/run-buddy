@@ -1,7 +1,7 @@
 :root {
     --main-color: #fce138;
     --secondary-color: #024e76;
-    --primary-border: 1px solid #024e76;
+    --primary-border: 2px solid #024e76;
   }
   
 * {
@@ -396,17 +396,17 @@ section {
 }
 
 .trainer-1 {
-    background-image: url("/assets/images/trainer-1.jpg");
+    background-image: url("../images/trainer-1.jpg");
     background-size: cover ;
 }
 
 .trainer-2 {
-    background-image: url("/assets/images/trainer-2.jpg");
+    background-image: url("../images/trainer-2.jpg");
     background-size: cover ;
 }
 
 .trainer-3 {
-    background-image: url("/assets/images/trainer-3.jpg");
+    background-image: url("../images/trainer-3.jpg");
     background-size: cover ;
 }
 
@@ -417,7 +417,9 @@ section {
 
 .trainer-bio h3 {
     font-size: 28px;
-    display: none;    
+    display: none;
+    transition-delay: 0.1s;
+    transition-timing-function:ease-in;    
 }
 
 .trainer-bio h4 {
@@ -425,6 +427,8 @@ section {
     font-size: 26px;
     margin-bottom: 15px;
     display: none;
+    transition-delay: 0.1s;
+    transition-timing-function:ease-in;
 }
 
 .trainer-bio p {
@@ -449,14 +453,14 @@ section {
     display: grid;
     grid-template-columns: 30px, repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    border: var(--primary-border);
+    border: 1px solid #024e76;
     color: #024e76;
     font-size: 1.2rem;
 }
 
 .service-grid-item {
     padding: 15px 0;
-    border: var(--primary-border);
+    border: 1px solid #024e76;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -675,12 +679,19 @@ footer a {
         flex: 100%;  
     }
 
+    .trainer-img {
+
+    }
+
     .trainer-img h3, .trainer-img h4, .trainer-img::after {
         display: none;
     }
 
     .trainer-bio h3, .trainer-bio h4 {
         display: inline;
+    }
+    
+    .trainer-bio:hover h3, .trainer-bio:hover h4 {
         top: 0px;
         transition-property: top, left, right, 0.2s;
     }
