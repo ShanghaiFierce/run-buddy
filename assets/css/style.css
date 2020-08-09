@@ -10,26 +10,14 @@
     box-sizing: border-box;
 }
 
-/* header styles + BGN */
-header h1 {
-    font-weight: bold;
-    font-size: 36px;
-    color: #fce138;
-    margin: 0;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-header a {
-    text-decoration: none;
-    color: #fce138;
-}
-
+/* HEADER styling */
 header {
     padding: 20px 35px;
     background-color: #39a6b2;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    /** sticky header at top **/
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -38,6 +26,21 @@ header {
     background-position: center;
     background-attachment: fixed;
     background-position: 80%;
+    z-index: 9999;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 36px;
+    color: #fce138;
+    margin: 0;
+    /* adding black text shadow */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header a {
+    text-decoration: none;
+    color: #fce138;
 }
 
 header nav {
@@ -58,14 +61,16 @@ header nav ul li a {
     font-size: 1.55vw;
 }
 
+/* #header nav hover styling */
 header nav ul li a:hover {
     background: #fce138;
     color: #024e76;
+    /** nav border **/
     border-radius: 15px;
     text-shadow: none;
 }
 
-/* main section begins */
+/* MAIN */
 body {
     color: #39a6b2;
     font-family: Arial, Helvetica, sans-serif; 
@@ -75,7 +80,7 @@ section {
     padding: 60px;
 }
 
-/* .hero general container */
+/* HERO */
 .hero {
     background-image: url("../images/hero-bg.jpg");
     background-size: cover;
@@ -86,7 +91,7 @@ section {
     align-items: flex-start;
 }
 
-/* .hero CTA CSS */
+/* #hero-cta styling */
 .hero-cta {
     width: 35%;
     text-align: right;
@@ -101,17 +106,21 @@ section {
     color: #fce138;
     font-size: 58px;
     font-style: italic;
+    /* adding black text shadow */
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-/* .hero form CSS */
+
+/* #hero-form styling */
 .hero-form {
     color: #024e76;
-    background-color: 0 0 0 rgba(252, 225, 56, 0.8);
+    background-color: rgba(252, 225, 56, 0.8);
     width: 40%;
     margin:3.5%;
     padding: 20px;
     border: 3px solid #024e76;
+    /** form border **/
     border-radius: 15px;
+    /** black box shadow **/
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -124,6 +133,10 @@ section {
     margin: 5px 0 15px 0;
 }
 
+.hero-form label {
+    margin: 0 5px;
+}
+
 .form-input {
     width: 100%;
     border: 1px solid #024e76;
@@ -133,17 +146,78 @@ section {
     color: #024e76;
     margin-bottom: 15px;
     border: 3px solid #024e76;
+    /** form border **/
     border-radius: 10px;
+    /** dark blue box shadow **/
     box-shadow: 10px 10px 10px rgba(2, 78, 118, 0.5);
     background-color: rgba(255, 255, 255, 0.75);
 }
 
+/* #hero form input area white and no border */
 .form-input:focus {
-    background-color: rgba(255, 255, 255, 1)
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
 }
 
-.hero-form label {
-    margin: 0 5px;
+/* #hero-form radio box styling */
+.checkbox-wrapper input, .radio-wrapper input {
+    opacity: 0;
+  }
+
+.checkbox-wrapper label, .radio-wrapper label {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+/** #hero-form.pseudo.before checkbox + radio **/
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);  
+    border: 1px solid #024e76;  
+    position: absolute;
+    top: -4px;
+    left: -30px;
+}
+
+.radio-wrapper label::before {
+  border-radius: 50%;
+}
+
+/** #hero-form.pseudo.after checkbox + radio **/
+.radio-wrapper label::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #024e76;
+  position: absolute;
+  left: -29px;
+  top: -3px;
+  background-image: radial-gradient(circle, #39a6b2, #024e76);
+}
+
+.checkbox-wrapper label::after {
+  content: "";
+  height: 6px;
+  width: 14px;
+  border-left: 2px solid #024e76;
+  border-bottom: 2px solid #024e76;
+  position: absolute;
+  left: -26px;
+  top: 1px;
+  transform: rotate(-58deg);
+}
+
+.checkbox-wrapper input + label::after, .radio-wrapper input + label::after {
+  content: none;
+}
+
+.checkbox-wrapper input:checked + label::after, .radio-wrapper input:checked + label::after {
+  content: "";
 }
 
 .hero-form button {
@@ -152,10 +226,13 @@ section {
     font-size: 16px;
     padding: 10px 20px;
     border: 2px solid #024e76;
+    /** button border **/
     border-radius: 10px;
+    /** dark blue box shadow **/
     box-shadow: 5px 5px 5px rgba(2, 78, 118, 0.5);
 }
 
+/** #hero form button hover **/
 .hero-form button:hover {
     background-color: #39a6b2;
 }
@@ -195,23 +272,24 @@ section {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
+    background: #fce138;
+    }
+
+.step {
+    width: 80%;
+    margin: 50px auto;
+    padding-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     background: #fce138;
-    }
-
-.step {
-    width: 100%;
-    display: flex;
 }
 
 .step h3 {
-    color: #024e76;
-    font-size: 46px;
     margin-top: 10px;
+    font-size: 46px;
+    color: #024e76;
     flex: 1 30%;
 }
 
@@ -220,9 +298,8 @@ section {
 }
 
 .step-text p {
-    color: #39a6b2;
     font-size: 23px;
-
+    color: #39a6b2;
 }
 
 .step-text h4 {
@@ -232,20 +309,25 @@ section {
 }
 
 .step-info {
-    flex: 2 70%;
     display: flex;
+    flex: 2 70%;
     flex-wrap: wrap;
     align-items: center;
 }
 
 .step-img {
-    flex: 1 12%;
     margin-right: 20px;
+    flex: 1 12%;
 }
 
 .step-img img {
     max-width: 100%;
 }
+
+/** #pseudo border bottom **/
+.step:not(:last-child) {
+    border-bottom: 1px solid #39a6b2;
+  }
 
 /* trainers section */
 .trainers {
@@ -396,8 +478,16 @@ section {
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px rgba(2, 78, 118, 0.5);
+    /** content border **/
+    border-radius: 5px;
+    /** dark blue box shadow **/
+    box-shadow: 10px 10px 10px rgba(48, 61, 68, 0.5);
+}
+
+/** #contact form input + textarea white and no border **/
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: rgba(126, 191, 255, 0.5) ;
+    outline: none;
 }
 
 .contact-form button {
@@ -408,10 +498,13 @@ section {
     text-align: center;
     padding: 15px 0;
     font-size: 16px;    
+    /** button border **/
     border-radius: 10px;
+    /** dark blue box shadow **/
     box-shadow: 10px 10px 10px rgba(2, 78, 118, 0.5);
 }
 
+/** #contact form button hover **/
 .contact-form button:hover {
     color: #fce138;
     background: #39a6b2;
@@ -464,6 +557,7 @@ footer a {
     }
     header nav ul li a {
         font-size: 20px;
+    /* adding black text shadow */
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
     .hero-cta, .hero-form {
