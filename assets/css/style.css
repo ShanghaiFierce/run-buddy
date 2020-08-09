@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #fce138;
+    --main-color: #fce138;
     --secondary-color: #024e76;
-    --tertiary-color: #39a6b2;
+    --primary-border: var(--primary-border);
   }
   
 * {
@@ -204,8 +204,8 @@ section {
   content: "";
   height: 6px;
   width: 14px;
-  border-left: 2px solid #024e76;
-  border-bottom: 2px solid #024e76;
+  border-left: var(--primary-border);
+  border-bottom: var(--primary-border);
   position: absolute;
   left: -26px;
   top: 1px;
@@ -225,7 +225,7 @@ section {
     background-color: #024e76;
     font-size: 16px;
     padding: 10px 20px;
-    border: 2px solid #024e76;
+    border: var(--primary-border);
     /** button border **/
     border-radius: 10px;
     /** dark blue box shadow **/
@@ -386,14 +386,14 @@ section {
     display: grid;
     grid-template-columns: 30px, repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    border: 2px solid #024e76;
+    border: var(--primary-border);
     color: #024e76;
     font-size: 1.2rem;
 }
 
 .service-grid-item {
     padding: 15px 0;
-    border: 2px solid #024e76;
+    border: var(--primary-border);
     display: flex;
     align-items: center;
     justify-content: center;
