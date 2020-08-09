@@ -1,7 +1,7 @@
 :root {
     --main-color: #fce138;
     --secondary-color: #024e76;
-    --primary-border: var(--primary-border);
+    --primary-border: 1px solid #024e76;
   }
   
 * {
@@ -345,8 +345,69 @@ section {
     flex: 1;
 }
 
-.trainer img {
+.trainer-img {
     width: 100%;
+    min-height: 300px;
+    display: flex;
+    padding: 15px;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden ;
+}
+
+.trainer-img h3 {
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 28px;
+    top: 200px;
+    z-index: 1;
+    transition-delay: 0.2s;
+    transition-timing-function:ease-in;
+}
+
+.trainer-img h4 {
+    position: relative;
+    font-size: 22px;
+    top: 200px;
+    z-index: 1;
+    transition-delay: 0.2s;
+    transition-timing-function:ease-in;
+}
+
+.trainer-img::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient( rgba(252, 225, 56, 0.3), #024e76);
+    position: absolute;
+    top: 0;
+    left: 0;  
+    opacity: 0;
+}
+
+.trainer-img:hover:after {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.trainer:hover .trainer-img h3, .trainer:hover .trainer-img h4 {
+    top: 0px;
+    transition-property: top, left, right, 1s;
+}
+
+.trainer-1 {
+    background-image: url("/assets/images/trainer-1.jpg");
+    background-size: cover ;
+}
+
+.trainer-2 {
+    background-image: url("/assets/images/trainer-2.jpg");
+    background-size: cover ;
+}
+
+.trainer-3 {
+    background-image: url("/assets/images/trainer-3.jpg");
+    background-size: cover ;
 }
 
 .trainer-bio {
@@ -356,12 +417,14 @@ section {
 
 .trainer-bio h3 {
     font-size: 28px;
+    display: none;    
 }
 
 .trainer-bio h4 {
     font-weight: lighter;
     font-size: 26px;
     margin-bottom: 15px;
+    display: none;
 }
 
 .trainer-bio p {
@@ -610,6 +673,16 @@ footer a {
 
     .step-text {
         flex: 100%;  
+    }
+
+    .trainer-img h3, .trainer-img h4, .trainer-img::after {
+        display: none;
+    }
+
+    .trainer-bio h3, .trainer-bio h4 {
+        display: inline;
+        top: 0px;
+        transition-property: top, left, right, 0.2s;
     }
 
     .service-grid-container {
